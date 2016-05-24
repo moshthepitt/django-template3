@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
+    'compressor',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -134,6 +135,19 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, "static"),
+)
+
+# STATICFILES_FINDERS
+
+STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    # other finders..
+    'compressor.finders.CompressorFinder',
+)
+
 
 # AUTHENTICATION_BACKENDS
 
@@ -157,6 +171,17 @@ SOCIALACCOUNT_PROVIDERS = {
     }
 }
 
+# Pagination
+
+PAGINATION_DEFAULT_PAGINATION = 20
+
+# COMPRESSOR
+
+COMPRESS_CSS_FILTERS = [
+    'compressor.filters.css_default.CssAbsoluteFilter',
+    'compressor.filters.cssmin.CSSMinFilter'
+]
+
 
 # Sites
 
@@ -164,6 +189,6 @@ SITE_ID = 1
 
 
 try:
-    from local_settings import *
+    from .local_settings import *
 except ImportError:
     pass

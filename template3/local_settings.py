@@ -22,9 +22,6 @@ DEFAULT_FROM_EMAIL = 'Hello World <hello@example.com>'
 
 
 # static
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, "static"),
-)
 STATIC_ROOT = '/static/'
 STATIC_URL = '/static/'
 
