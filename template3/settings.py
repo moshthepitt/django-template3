@@ -31,6 +31,9 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'suit',
+
+    # default
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -56,6 +59,7 @@ INSTALLED_APPS = [
     'compressor',
     'crispy_forms',
     'debug_toolbar',
+    'suit_redactor',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -138,7 +142,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Africa/Nairobi'
 
 USE_I18N = True
 
@@ -202,6 +206,14 @@ COMPRESS_CSS_FILTERS = [
 # crispy forms
 
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
+
+# Suit
+
+SUIT_CONFIG = {
+    'ADMIN_NAME': 'Django Template',
+    'SEARCH_URL': '',
+
+}
 
 # Sites
 
