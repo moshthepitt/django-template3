@@ -51,7 +51,10 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
+    # 'allauth.socialaccount.providers.facebook',
+    # 'allauth.socialaccount.providers.twitter',
     'compressor',
+    'crispy_forms',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -182,6 +185,9 @@ COMPRESS_CSS_FILTERS = [
     'compressor.filters.cssmin.CSSMinFilter'
 ]
 
+# crispy forms
+
+CRISPY_TEMPLATE_PACK = 'bootstrap3'
 
 # Sites
 
