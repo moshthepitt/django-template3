@@ -135,6 +135,35 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 
+# AUTHENTICATION_BACKENDS
+
+AUTHENTICATION_BACKENDS = (
+    # Needed to login by username in Django admin, regardless of `allauth`
+    "django.contrib.auth.backends.ModelBackend",
+    # `allauth` specific authentication methods, such as login by e-mail
+    "allauth.account.auth_backends.AuthenticationBackend"
+)
+
+# auth and allauth settings
+
+SOCIALACCOUNT_QUERY_EMAIL = True
+EMAIL_CONFIRMATION_DAYS = 14
+ACCOUNT_AUTHENTICATION_METHOD = "username_email"
+ACCOUNT_EMAIL_REQUIRED = True
+SOCIALACCOUNT_PROVIDERS = {
+    'facebook': {
+        'SCOPE': ['email', 'public_profile', 'user_friends'],
+        'METHOD': 'js_sdk'  # instead of 'oauth2'
+    }
+}
+
+
 # Sites
 
 SITE_ID = 1
+
+
+try:
+    from local_settings import *
+except ImportError:
+    pass
