@@ -55,6 +55,7 @@ INSTALLED_APPS = [
     # 'allauth.socialaccount.providers.twitter',
     'compressor',
     'crispy_forms',
+    'debug_toolbar',
 ]
 
 MIDDLEWARE_CLASSES = [
