@@ -1,11 +1,15 @@
-from django.contrib.sites.models import Site
-from django.conf import settings
+from django.contrib import admin
+# from django.contrib.flatpages.admin import FlatPageAdmin
+# from django.contrib.flatpages.models import FlatPage
+# from django.db import models
+
+# from suit_redactor.widgets import RedactorWidget
 
 
-def debug_processor(request):
-    """Makes DEBUG_MODE available if settings.DEBUG is True"""
-    return {'DEBUG_MODE': settings.DEBUG}
+# class FlatPageCustom(FlatPageAdmin):
+#     formfield_overrides = {
+#         models.TextField: {'widget': RedactorWidget(editor_options={'lang': 'en'})}
+#     }
 
-
-def site_processor(request):
-    return {'site': Site.objects.get_current()}
+# admin.site.unregister(FlatPage)
+# admin.site.register(FlatPage, FlatPageCustom)
