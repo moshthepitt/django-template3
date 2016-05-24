@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% load i18n staticfiles %}
+
+{% block meta_keywords %}
+  <meta name="keywords" content="{% block meta-keywords %}django, blog, weblog, zinnia{% endblock meta-keywords %}" />
+{% endblock %}
+{% block meta_description %}
+  <meta name="description" content="{% block meta-description %}{% trans "Just another blog" %}{% endblock meta-description %}{% block meta-description-page %}{% endblock meta-description-page %}" />
+{% endblock %}
+
+{% block other_meta %}
+  {% block meta %}{% endblock meta %}
+  <link rel="pingback" href="/xmlrpc/" />
+  <link rel="home" href="{% url 'zinnia:entry_archive_index' %}" />
+  {% block link %}{% endblock link %}
+{% endblock %}
+
+{% block extracss %}{% endblock %}
+
+{% block title %}{% endblock title %}{% block title-page %}{% endblock title-page %}
+
+{% block all_content %}
+  {% block slider %}{% endblock %}
+  <div class="container">
+    <div class="row">
+      <div id="content" class="hfeed col-xs-12 col-sm-8 col-md-8 col-lg-8">
+        {% block breadcrumbs %}{% endblock %}
+        {% block content %}
+        <div class="links">
+          <h3>{% trans "Useful links" %}</h3>
+          <ul>
+            <li>
+              <a href="{% url 'zinnia:entry_archive_index' %}" title="{% trans "Weblog index" %}">
+                {% trans "Weblog index" %}
+              </a>
+            </li>
+            <li>
+              <a href="{% url 'zinnia:sitemap' %}" title="{% trans "Sitemap" %}">
+                {% trans "Sitemap" %}
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="search">
+          <h3>{% trans "Search" %}</h3>
+          {% include "zinnia/tags/search_form.html" %}
+        </div>
+        {% endblock content %}
+      </div>
+      <div id="sidebar" class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+        {% block sidebar %}
+        {% endblock sidebar %}
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+{% block extrajs %}{% endblock %}
+
+{% block extrafooter %}{% endblock %}

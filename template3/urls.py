@@ -19,7 +19,10 @@ from django.views.static import serve
 
 from django.conf import settings
 
+from core.views import HomePageView
+
 urlpatterns = [
+    url(r'^$', HomePageView.as_view(), name='home'),
     url(r'^admin/', admin.site.urls),
     url(r'^accounts/', include('allauth.urls')),
 
