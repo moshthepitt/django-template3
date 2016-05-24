@@ -22,6 +22,9 @@ from django.conf import settings
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^accounts/', include('allauth.urls')),
+
+    # this should be last
+    url(r'^page/', include('django.contrib.flatpages.urls')),
 ]
 
 if settings.DEBUG:
