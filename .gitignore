@@ -3,4 +3,5 @@
 *.sqlite3
 celerybeat.pid
 celerybeat-schedule
+__pycache__
 #whoosh_index/
