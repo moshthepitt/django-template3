@@ -4,4 +4,5 @@
 celerybeat.pid
 celerybeat-schedule
 __pycache__
+staticfiles/
 #whoosh_index/

@@ -60,6 +60,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'debug_toolbar',
     'suit_redactor',
+    'django_extensions',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -74,6 +75,7 @@ MIDDLEWARE_CLASSES = [
 
     # custom
     'django.contrib.flatpages.middleware.FlatpageFallbackMiddleware',
+    'debug_toolbar.middleware.DebugToolbarMiddleware'
 ]
 
 ROOT_URLCONF = 'template3.urls'
@@ -168,6 +170,10 @@ STATICFILES_FINDERS = (
     # other finders..
     'compressor.finders.CompressorFinder',
 )
+
+# WHITENOISE
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
 # AUTHENTICATION_BACKENDS

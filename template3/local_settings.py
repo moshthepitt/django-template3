@@ -22,7 +22,7 @@ DEFAULT_FROM_EMAIL = 'Hello World <hello@example.com>'
 
 
 # static
-STATIC_ROOT = '/static/'
+# STATIC_ROOT = '/static/'
 STATIC_URL = '/static/'
 
 # media
@@ -47,6 +47,23 @@ CACHES = {
 #         'BATCH_SIZE': 1000,
 #     },
 # }
+
+# LOGGING
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler',
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['console'],
+            'level': os.getenv('DJANGO_LOG_LEVEL', 'INFO'),
+        },
+    },
+}
 
 # DEBUG
 # SECURITY WARNING: don't run with debug turned on in production!
