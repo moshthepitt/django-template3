@@ -4,7 +4,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.admin.views.decorators import staff_member_required
 from django.views.decorators.csrf import csrf_protect
 
-from .decorators import cache_page_on_auth, cache_page_for_user
+from core.decorators import cache_page_on_auth, cache_page_for_user
 
 
 class CSRFMixin(object):
@@ -34,10 +34,12 @@ class CachePageForUserMixin(object):
 class LoginRequiredMixin(object):
     @method_decorator(login_required)
     def dispatch(self, request, *args, **kwargs):
-        return super(LoginRequiredMixin, self).dispatch(request, *args, **kwargs)
+        return super(LoginRequiredMixin, self).dispatch(request, *args,
+                                                        **kwargs)
 
 
 class StaffmemberRequiredMixin(object):
     @method_decorator(staff_member_required)
     def dispatch(self, request, *args, **kwargs):
-        return super(StaffmemberRequiredMixin, self).dispatch(request, *args, **kwargs)
+        return super(StaffmemberRequiredMixin, self).dispatch(request,
+                                                              *args, **kwargs)
