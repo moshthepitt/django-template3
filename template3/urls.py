@@ -19,10 +19,11 @@ from django.conf import settings
 from django.conf.urls import include
 from django.views.static import serve
 
-from core.views import HomePageView
+from core.views import HomePageView, Dashboard
 
 urlpatterns = [
     path('', HomePageView.as_view(), name='home'),
+    path('dashboard', Dashboard.as_view(), name='dashboard'),
     path('admin/', admin.site.urls),
     path('accounts/', include('allauth.urls')),
 

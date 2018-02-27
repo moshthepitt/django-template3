@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load i18n django_tables2 crispy_forms_tags %}
+
+{% block page_title %} {{verbose_name_plural}} {% endblock %}
+
+{% block page_content %} 
+	<div class="row">
+		<div class="col-md-12 content-box-info">
+			<div class="content-box-header">
+				<div class="clearfix">
+					<h4 class="panel-title pull-left" style="padding-top: 7.5px;">{{verbose_name_plural}}</h4>
+					<div class="btn-group pull-right margin-left-10">						
+						<a href="{{create_view_url}}" class="btn btn-primary btn-sm btn-100">{% trans 'Add New' %}</a>
+					</div>
+					<div class="btn-group pull-right">
+						{% crispy form %}
+					</div>
+				</div>
+			</div>
+			<div class="content-box-large box-with-header">
+				{% render_table table %}
+				{% if request.GET.q %}
+					<a href="{{list_view_url}}" class="btn btn-default btn-sm btn-100">{% trans 'Clear Search' %}</a>
+				{% endif %}
+			</div>
+		</div>
+	</div>
+{% endblock %}

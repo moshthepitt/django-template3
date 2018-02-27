@@ -73,7 +73,7 @@ ROOT_URLCONF = 'template3.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates'),],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -81,6 +81,9 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                # custom
+                "core.context_processors.site_processor",
+                "core.context_processors.debug_processor",
             ]
         },
     },
@@ -192,14 +195,6 @@ COMPRESS_CSS_FILTERS = [
 # crispy forms
 
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
-
-# Suit
-
-SUIT_CONFIG = {
-    'ADMIN_NAME': 'Django Template3',
-    'SEARCH_URL': '',
-
-}
 
 # Sites
 
