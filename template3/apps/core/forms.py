@@ -1,9 +1,9 @@
 from django import forms
 from django.utils.translation import ugettext as _
 
+from crispy_forms.bootstrap import Field, FieldWithButtons
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Layout, Submit
-from crispy_forms.bootstrap import Field, FieldWithButtons
 
 
 class ListViewSearchForm(forms.Form):

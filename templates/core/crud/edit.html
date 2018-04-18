@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "base-admin.html" %}
 {% load i18n crispy_forms_tags %}
 
 {% block extrahead %}
@@ -7,7 +7,7 @@
 
 {% block title %} {{object}} | {% trans "Edit" %} {{verbose_name}} {% endblock %}
 
-{% block page_content %} 
+{% block page_content %}
 	<div class="row">
 		<div class="col-md-12 content-box-info">
 			<div class="content-box-header">

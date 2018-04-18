@@ -1,6 +1,6 @@
+import os
 import uuid
 from datetime import datetime
-import os
 
 from django.contrib.auth.models import User
 from django.template.defaultfilters import slugify

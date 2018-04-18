@@ -1,4 +1,5 @@
 import os
+
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 # sites
@@ -6,6 +7,17 @@ SITE_ID = 1
 
 # change the secret key
 SECRET_KEY = 'hwokhV3;N5"E\=vV(t&_D@Yxn>CwPpuB=P\Qt8xF#j@E6)Q3:4.:@$+ox[Z!lQR'
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'mydatabase',
+        'USER': 'mydatabaseuser',
+        'PASSWORD': 'mypassword',
+        'HOST': '127.0.0.1',
+        'PORT': '5432',
+    }
+}
 
 DATABASES = {
     'default': {

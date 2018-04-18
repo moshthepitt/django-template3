@@ -1,4 +1,6 @@
 *.pyc
+.venv
+.vscode/
 #local_settings.py
 *.sqlite3
 celerybeat.pid

@@ -1,6 +1,7 @@
 from functools import wraps
-from django.views.decorators.cache import cache_page
+
 from django.utils.decorators import available_attrs
+from django.views.decorators.cache import cache_page
 
 
 def cache_page_on_auth(timeout):

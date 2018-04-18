@@ -1,12 +1,13 @@
-from django.contrib.auth.decorators import login_required
 from django.contrib.admin.views.decorators import staff_member_required
+from django.contrib.auth.decorators import login_required
 from django.db.models import Q
+from django.utils.decorators import method_decorator
 from django.views.decorators.cache import cache_page
 from django.views.decorators.csrf import csrf_protect
-from django.utils.decorators import method_decorator
 
-from core.decorators import cache_page_on_auth, cache_page_for_user
-from core.forms import ListViewSearchForm
+from template3.apps.core.decorators import (cache_page_for_user,
+                                            cache_page_on_auth)
+from template3.apps.core.forms import ListViewSearchForm
 
 
 class CSRFMixin(object):

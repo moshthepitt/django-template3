@@ -1,15 +1,16 @@
-from django.views.generic.list import ListView
-from django.views.generic.edit import CreateView, UpdateView, DeleteView
-from django.utils.translation import ugettext as _
+from django.contrib import messages
 from django.db.models import ProtectedError
 from django.shortcuts import redirect
-from django.contrib import messages
+from django.utils.translation import ugettext as _
+from django.views.generic.edit import CreateView, DeleteView, UpdateView
+from django.views.generic.list import ListView
 
-from braces.views import LoginRequiredMixin, FormMessagesMixin
+from braces.views import FormMessagesMixin, LoginRequiredMixin
 from django_tables2 import SingleTableView
 from django_tables2.export.views import ExportMixin
 
-from core.mixins import CoreFormMixin, ListViewSearchMixin, VerboseNameMixin
+from template3.apps.core.mixins import (CoreFormMixin, ListViewSearchMixin,
+                                        VerboseNameMixin)
 
 
 class CoreListView(LoginRequiredMixin, VerboseNameMixin, ListViewSearchMixin,
