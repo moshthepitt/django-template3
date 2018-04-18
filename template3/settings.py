@@ -82,8 +82,8 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 # custom
-                "core.context_processors.site_processor",
-                "core.context_processors.debug_processor",
+                "template3.apps.core.context_processors.site_processor",
+                "template3.apps.core.context_processors.debug_processor",
             ]
         },
     },
