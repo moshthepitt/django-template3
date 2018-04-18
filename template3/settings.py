@@ -43,7 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.humanize',
     # custom
     'template3.apps.users',
-    'template3.apps.core',
+    'template3.apps.core.apps.CoreConfig',
     # third party
     'allauth',
     'allauth.account',
